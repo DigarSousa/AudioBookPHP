@@ -13,7 +13,7 @@ error_reporting(-1);
 //UtilityGrid::insertCategory("Bosta", "../bosta1.png");
 $imagem = file_get_contents('../bosta1.png');
 echo $imagem;
-
+echo base64_encode($imagem);
 /*$rows = UtilityGrid::getCategories();
 
 $results = array();
