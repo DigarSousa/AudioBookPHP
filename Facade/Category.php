@@ -12,13 +12,14 @@ error_reporting(-1);
 
 //UtilityGrid::insertCategory("Medicina", "../med.png");
 
+
 $rows = UtilityGrid::getCategories();
 
 $results = array();
 foreach ($rows as $row) {
     $results ['id'] = $row["ID_CATEGORY"];
     $results ['name'] = $row["NAME_CATEGORY"];
-    $results['image'] = base64_encode($row["IMAGE"]);
+    $results['image'] = base64_encode($row["IMAGE_64"]);
 
 }
 

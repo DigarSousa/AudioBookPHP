@@ -16,7 +16,7 @@ class UtilityGrid
     public static function insertCategory($name, $image)
     {
         $imageFile = fopen("$image", 'rb');
-        $query = "INSERT INTO CATEGORY (NAME_CATEGORY,IMAGE)
+        $query = "INSERT INTO CATEGORY (NAME_CATEGORY,IMAGE_64)
                   VALUES(:name_category, :image)";
 
         $conn = openCon();
