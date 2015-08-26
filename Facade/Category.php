@@ -10,10 +10,11 @@ error_reporting(-1);
  * Time: 14:32
  */
 
-//UtilityGrid::insertCategory("Medicina", "../med.png");
+//UtilityGrid::insertCategory("Bosta", "../bosta1.png");
+$imagem = file_get_contents('../bosta1.png');
+echo $imagem;
 
-
-$rows = UtilityGrid::getCategories();
+/*$rows = UtilityGrid::getCategories();
 
 $results = array();
 $resultsSet = array();
@@ -22,10 +23,10 @@ foreach ($rows as $row) {
     $results ['name'] = $row["NAME_CATEGORY"];
     $results['image'] = base64_encode($row["IMAGE_64"]);
 
-
+    $resultsSet[] = $results;
 }
 
-$json = json_encode($results);
+$json = json_encode($resultsSet);
 echo $json;
 
 function encodeToBase($image)
@@ -34,4 +35,4 @@ function encodeToBase($image)
     return ('data:' . 'image/png' . ';base64,' . $base64);
 }
 
-
+*/
