@@ -22,7 +22,7 @@ foreach ($rows as $row) {
     $results ['name'] = $row["NAME_CATEGORY"];
     $results['image'] = base64_encode($row["IMAGE_64"]);
 
-    
+
 }
 
 $json = json_encode($results);
