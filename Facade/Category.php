@@ -16,11 +16,13 @@ error_reporting(-1);
 $rows = UtilityGrid::getCategories();
 
 $results = array();
+$resultsSet = array();
 foreach ($rows as $row) {
     $results ['id'] = $row["ID_CATEGORY"];
     $results ['name'] = $row["NAME_CATEGORY"];
     $results['image'] = base64_encode($row["IMAGE_64"]);
 
+    
 }
 
 $json = json_encode($results);
