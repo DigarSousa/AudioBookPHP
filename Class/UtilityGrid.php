@@ -15,7 +15,7 @@ class UtilityGrid
 
     public static function insertCategory($name, $image)
     {
-        $imageFile = fopen("$image", 'rb');
+
         $query = "INSERT INTO CATEGORY (NAME_CATEGORY,IMAGE_64)
                   VALUES(:name_category, :image)";
 
@@ -24,7 +24,7 @@ class UtilityGrid
         $stmt = $conn->prepare($query);
         if ($stmt) {
             $stmt->bindValue("name_category", $name);
-            $stmt->bindValue("image", $imageFile, PDO::PARAM_LOB);
+            $stmt->bindValue("image", $image);
             $stmt->execute();
             $conn = null;
         }

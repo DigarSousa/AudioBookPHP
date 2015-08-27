@@ -10,7 +10,7 @@
     <table name="CATEGORY" schema="" catalog="AUDIOBOOKS" type="TABLE">
       <column name="ID_CATEGORY" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="NAME_CATEGORY" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="IMAGE_64" sqlType="BLOB" precision="65535" scale="0" nullable="true" jdbcType="-4"/>
+      <column name="IMAGE_64" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
       <primary-key name="PRIMARY" columns="ID_CATEGORY"/>
     </table>
     <table name="USER" schema="" catalog="AUDIOBOOKS" type="TABLE">
