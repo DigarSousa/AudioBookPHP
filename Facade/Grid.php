@@ -14,6 +14,9 @@ error_reporting(-1);
 $base = base64_encode($imagem);
 UtilityGrid::insertCategory("BostaBosta", $base);*/
 
+$obj = file_get_contents("php://input");
+$json = json_decode($obj);
+$gridType = $json->gridType;
 $rows = UtilityGrid::getCategories();
 
 $results = array();

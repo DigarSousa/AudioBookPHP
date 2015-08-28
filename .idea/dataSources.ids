@@ -7,11 +7,20 @@
     </database-info>
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
     <schema name="" catalog="AUDIOBOOKS"/>
+    <table name="BOOK" schema="" catalog="AUDIOBOOKS" type="TABLE">
+      <column name="ID_BOOK" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="IMAGE_64" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="ID_CATEGORY" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ID_BOOK"/>
+      <foreign-key name="BOOK_ibfk_1" columns="ID_CATEGORY" ref-table="CATEGORY" ref-schema="" ref-catalog="AUDIOBOOKS" ref-columns="ID_CATEGORY" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
     <table name="CATEGORY" schema="" catalog="AUDIOBOOKS" type="TABLE">
       <column name="ID_CATEGORY" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="NAME_CATEGORY" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="IMAGE_64" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
       <primary-key name="PRIMARY" columns="ID_CATEGORY"/>
+      <exported-key name="BOOK_ibfk_1" table="BOOK" schema="" catalog="AUDIOBOOKS" columns="ID_CATEGORY"/>
     </table>
     <table name="USER" schema="" catalog="AUDIOBOOKS" type="TABLE">
       <column name="ID_USER" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>

@@ -8,7 +8,6 @@ include_once('../Class/User.php');
  * @return 1 if logged or 0 for denied access
  *
  */
-//$obj = '{"login":"ed","password":"123"}';
 $obj = file_get_contents("php://input");
 $json = json_decode($obj);
 
