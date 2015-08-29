@@ -42,4 +42,34 @@ class UtilityGrid
         }
     }
 
+    public static function insertIntoBook($name, $image)
+    {
+        $query = "INSERT INTO BOOK(NAME, IMAGE_64)
+                VALUES (:name, :image)";
+
+        $conn = openCon();
+
+        $stmt = $conn->prepare($query);
+        if ($stmt) {
+            $stmt->bindValue("name", $name);
+            $stmt->bindValue("image", $image);
+            $stmt->execute();
+            $conn = null;
+        }
+    }
+
+    public static function getBookList($idCategoria)
+    {
+        $query = "SELECT * FROM BOOK
+                WHERE BOOK.ID_CATEGORY=:category";
+
+        $conn = openCon();
+        $stmt = $conn->prepare($query);
+        if ($stmt) {
+            $stmt->bindValue("category", $idCategoria);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
+    }
+
 }
