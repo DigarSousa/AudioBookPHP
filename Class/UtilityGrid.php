@@ -58,7 +58,7 @@ class UtilityGrid
         }
     }
 
-    public static function getBookList($idCategoria)
+    public static function getBookList($idCategory)
     {
         $query = "SELECT * FROM BOOK
                 WHERE BOOK.ID_CATEGORY=:category";
@@ -66,7 +66,7 @@ class UtilityGrid
         $conn = openCon();
         $stmt = $conn->prepare($query);
         if ($stmt) {
-            $stmt->bindValue("category", $idCategoria);
+            $stmt->bindValue("category", $idCategory);
             $stmt->execute();
             return $stmt->fetchAll();
         }
