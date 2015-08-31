@@ -22,6 +22,8 @@ foreach ($rows as $row) {
     $results ['name'] = $row["NAME"];
     $results['image'] = $row["IMAGE_64"];
     $results['idCategory'] = $row["ID_CATEGORY"];
+    $results['author'] = $row["AUTHOR"];
+
     $resultsSet[] = $results;
 }
 $json = json_encode($resultsSet);
