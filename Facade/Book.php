@@ -12,20 +12,18 @@ error_reporting(-1);
  */
 
 
-
-
-$rows = UtilityGrid::getCategories();
+$rows = UtilityGrid::getBookList(2);
 
 $results = array();
 $resultsSet = array();
-foreach ($rows as $row) {
-    $results ['id'] = $row["ID_CATEGORY"];
-    $results ['name'] = $row["NAME_CATEGORY"];
-    $results['image'] = $row["IMAGE_64"];
 
+foreach ($rows as $row) {
+    $results ['id'] = $row["ID_BOOK"];
+    $results ['name'] = $row["NAME"];
+    $results['image'] = $row["IMAGE_64"];
+    $results['idCategory'] = $row["ID_CATEGORY"];
     $resultsSet[] = $results;
 }
-
 $json = json_encode($resultsSet);
 echo $json;
 

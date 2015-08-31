@@ -42,10 +42,10 @@ class UtilityGrid
         }
     }
 
-    public static function insertIntoBook($name, $image)
+    public static function insertIntoBook($name, $image, $idCategory)
     {
-        $query = "INSERT INTO BOOK(NAME, IMAGE_64)
-                VALUES (:name, :image)";
+        $query = "INSERT INTO BOOK(NAME, IMAGE_64,ID_CATEGORY)
+                VALUES (:name,:image,:idCategory)";
 
         $conn = openCon();
 
@@ -53,6 +53,8 @@ class UtilityGrid
         if ($stmt) {
             $stmt->bindValue("name", $name);
             $stmt->bindValue("image", $image);
+            $stmt->bindValue("idCategory", $idCategory);
+
             $stmt->execute();
             $conn = null;
         }
@@ -60,8 +62,8 @@ class UtilityGrid
 
     public static function getBookList($idCategory)
     {
-        $query = "SELECT * FROM BOOK
-                WHERE BOOK.ID_CATEGORY=:category";
+        $query = "SELECT * FROM BOOK b
+                WHERE :category=0 || b.ID_CATEGORY=:category";
 
         $conn = openCon();
         $stmt = $conn->prepare($query);

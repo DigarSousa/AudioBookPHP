@@ -13,13 +13,13 @@ error_reporting(-1);
  */
 
 
-$imagem = file_get_contents('../love.png');
+$imagem = file_get_contents('../livro.png');
 $base = base64_encode($imagem);
 
 
 //UtilityGrid::insertCategory("Romance", $base);
 
 
-UtilityGrid::insertIntoBook("Nome", $imagem);
+UtilityGrid::insertIntoBook("Rapunzel", $base, 2);
 
 //todo: interface com usuário pra cadastro e manutençãp e as putarias necessárias
