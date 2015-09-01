@@ -12,7 +12,7 @@ error_reporting(-1);
  */
 
 
-$rows = UtilityGrid::getBookList(2);
+$rows = UtilityGrid::getBookList(0);
 
 $results = array();
 $resultsSet = array();
@@ -23,6 +23,7 @@ foreach ($rows as $row) {
     $results['image'] = $row["IMAGE_64"];
     $results['idCategory'] = $row["ID_CATEGORY"];
     $results['author'] = $row["AUTHOR"];
+    $results['description'] = $row["DESCRIPTION"];
 
     $resultsSet[] = $results;
 }

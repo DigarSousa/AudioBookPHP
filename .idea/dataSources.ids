@@ -12,6 +12,8 @@
       <column name="NAME" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
       <column name="IMAGE_64" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
       <column name="ID_CATEGORY" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="AUTHOR" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="DESCRIPTION" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="ID_BOOK"/>
       <foreign-key name="BOOK_ibfk_1" columns="ID_CATEGORY" ref-table="CATEGORY" ref-schema="" ref-catalog="AUDIOBOOKS" ref-columns="ID_CATEGORY" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>

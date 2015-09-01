@@ -42,10 +42,10 @@ class UtilityGrid
         }
     }
 
-    public static function insertIntoBook($name, $image, $idCategory)
+    public static function insertIntoBook($name, $author, $description, $image, $idCategory)
     {
-        $query = "INSERT INTO BOOK(NAME, IMAGE_64,ID_CATEGORY)
-                VALUES (:name,:image,:idCategory)";
+        $query = "INSERT INTO BOOK(NAME,AUTHOR,DESCRIPTION, IMAGE_64,ID_CATEGORY)
+                VALUES (:name,:author,:description,:image,:idCategory)";
 
         $conn = openCon();
 
@@ -54,12 +54,14 @@ class UtilityGrid
             $stmt->bindValue("name", $name);
             $stmt->bindValue("image", $image);
             $stmt->bindValue("idCategory", $idCategory);
+            $stmt->bindValue("author", $author);
+            $stmt->bindValue("description", $description);
 
             $stmt->execute();
             $conn = null;
         }
     }
-
+//todo: recuperar outros campos do livro...
     public static function getBookList($idCategory)
     {
         $query = "SELECT * FROM BOOK b
